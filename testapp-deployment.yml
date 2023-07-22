@@ -13,8 +13,14 @@ spec:
         app: testapp-pod
     spec:
       containers:
-      - name: testapp-dep-ctr
+      - name: testapp-ctr
         image: kikeymeenan/testapp1
         ports:
         - name: testapp-ext
           containerPort: 3000
+        env:
+        - name: USER_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: mk-secret
+              key: user

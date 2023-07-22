@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapp2-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: testapp2-pod
+  template:
+    metadata:
+      labels:
+        app: testapp2-pod
+    spec:
+      containers:
+      - name: testapp2-ctr
+        image: kikeymeenan/testapp2
+        ports:
+        - name: testapp2-ext
+          containerPort: 3000
