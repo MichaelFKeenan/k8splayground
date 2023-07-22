@@ -25,4 +25,4 @@ spec:
               name: mk-secret
               key: user
         - name: API_SERVICE
-          value: testapp2-service.default.svc.cluster.local
+          value: testapp2-service
