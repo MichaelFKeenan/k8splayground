@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: testapp2-service
+  name: testapp2service
 spec:
   ports:
   - port: 31002

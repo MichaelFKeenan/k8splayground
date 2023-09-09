@@ -15,6 +15,7 @@ spec:
       containers:
       - name: testapp2-ctr
         image: kikeymeenan/testapp2
+        imagePullPolicy: IfNotPresent
         ports:
         - name: testapp2-ext
           containerPort: 3000
