@@ -25,7 +25,7 @@
     - m02 gets a score of 1, m03 gets 4, because of what each one matches in the rules, so the pods go on m03 (highest score)
 
 ** pod affinity
-    -- 2 types: required and preferred
+    -- 2 types: required and preferred (preferred can again be weighted)
     -- same as node affinity, but pod level instead
     - essentially, instead of specifying which node you want to use, you declare a pod you want to match ANY particular node label for
      - so you could say 'put pod B' on ANY node with the same 'availability zone' label as 'pod A'
