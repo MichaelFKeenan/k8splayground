@@ -31,3 +31,5 @@
      - so you could say 'put pod B' on ANY node with the same 'availability zone' label as 'pod A'
       - therefore, it doesn't NECESSARILY have to be on the same node, but it DOES have to be a node that shares the given property/label/TOPOLOGYKEY with the specified pod
     -- anti-affinity is exactly the same but reversed (makes sure it's not on matching node)
+
+    -- see examples, pod1 is created, pod 2 is created with affinity to pod1's node host name, then scaled up 4 times to be sure, then pod 3 is created with ANTI affinity to pod 1's host name. 1 and 2 end up on 02, 3 ends up on 03

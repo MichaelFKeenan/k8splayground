@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podaffinity-deployment3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podaffinity-pod3
+  template:
+    metadata:
+      labels:
+        app: podaffinity-pod3
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                    - pod-affinity-1
+              topologyKey: "kubernetes.io/hostname"
+
+      containers:
+      - name: podaffinity-ctr
+        image: kikeymeenan/testapp2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: podaffinity-ext
+          containerPort: 3000
