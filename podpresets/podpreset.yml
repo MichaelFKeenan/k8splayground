@@ -1,0 +1,11 @@
+apiVersion: settings.k8s.io/v1alpha1
+kind: PodPreset
+metadata:
+  name: testapp-podpreset
+spec:
+  selector:
+    matchLabels:
+      role: webapp
+  env:
+    - name: ENVID
+      value: "DEMO"

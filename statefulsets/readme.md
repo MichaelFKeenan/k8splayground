@@ -1,0 +1,4 @@
+- gives pods a stable pod hostname (ie appname-1, appname-2) as opposed to appname-randomstring
+- gives stateful apps stable storage
+- normally when a pod is scaled down, it loses it's volume
+- but stateful sets allow violumes to be attached via the stable name (ie appname-1) and do not get deleted when scaling down
